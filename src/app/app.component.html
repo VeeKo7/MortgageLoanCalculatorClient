@@ -1,0 +1,24 @@
+<div class="row">
+  <h3>Loan Calculator</h3>
+  <form>
+    <label for="personalCode">
+      Personal code
+      <input [(ngModel)]="personalCode" class="form-control" type="text" name="personalCode" id="personalCode">
+    </label>
+    <label for="loanAmount">
+      Loan amount
+      <input [(ngModel)]="loanAmount" class="form-control" type="text" name="loanAmount" id="loanAmount">
+    </label>
+    <label for="loanPeriod">
+      Loan period
+      <input [(ngModel)]="loanPeriod" class="form-control" type="text" name="loanPeriod" id="loanPeriod">
+    </label>
+
+    <button (click)="submitUserProfile()" class="btn btn-danger" type="submit">Submit</button>
+
+    <div *ngIf="resultIsBack">
+      <h3 *ngIf="approved">Loan was successfully approved for the amount {{approvedAmount}} for the period {{approvedLoanPeriod}}</h3>
+      <h3 *ngIf="!approved">Loan was not approved!</h3>
+    </div>
+  </form>
+</div>
